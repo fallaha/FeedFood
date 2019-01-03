@@ -14,5 +14,5 @@ void inf_set_family (char family[]);
 void inf_get_family (char *family);
 uint8_t inf_get_nofood (int d,int v);
 uint8_t inf_set_nofood (int d,int v,int nf);
-
+void inf_makeuser (char nostudent [],char password []);
 #endif /* _INFORMATION_H */
