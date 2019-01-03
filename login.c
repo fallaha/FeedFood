@@ -16,7 +16,8 @@ void user_login (){
         if (i>2){ /* wrong for 3 time */
             dis_print ("You wrong for 3 time :(");
             std_exit(); /* Close The program */
-        }        
+        }      
+        dis_print("login Successfully!");
     }
     else {  /* this user not register */
         char c;
