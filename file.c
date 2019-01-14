@@ -23,7 +23,7 @@ void file_open (const char fname[]){
     }
 }
 
-void file_create (char name []){
+void file_create (char fname []){
     fp = fopen(fname,"w+b");
     if (!fp){
         dis_print ("Cann't open or create file : %s",fname);
@@ -38,7 +38,7 @@ void file_close (){
 int file_isexist (char fname []){
     FILE *ip;
     ip = fopen (fname,'r');
-    if (!ip)
+    if (!ip) /* for better : errno == ENOENT */
         return 0; /* File not exist */
     else 
         fclose(ip); /* first close for next use */

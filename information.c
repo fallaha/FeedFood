@@ -2,20 +2,15 @@
 #include "file.h"
 #include "string.h"
 #include <stdint.h>
+#include "food.h"
 
-struct dayfood {
-    uint8_t food [3];
-};
-struct weekfood{
-    struct dayfood df [7];
-};
 struct information {
     char password [16];
     char nostudent [11];
     char name [20];
     char family [20];
-    uint32_t money = 0;
-    struct weekfood wf; /* information.wf.df[i].food[j] */
+    uint32_t money ;
+    uint8_t food [FD_MAX_DAY][FD_MAX_MEAL]; /* information.food[d][m] */
 };
 static struct information information;
 
@@ -30,6 +25,11 @@ void inf_set_money (uint32_t m){
 
 void inf_add_money (uint32_t m){
     information.money += m;
+    file_save(&information);;
+}
+
+void inf_dec_money (uint32_t m){
+    information.money -= m;
     file_save(&information);;
 }
 
@@ -62,11 +62,12 @@ void inf_get_family (char *family){
 }
 
 uint8_t inf_get_nofood (int d,int v){
-    return information.weekfood.df[d].food[v];
+    return information.food[d][v];
 }
 
 uint8_t inf_set_nofood (int d,int v,int nf){
-    return information.weekfood.df[d].food[v] = nf;
+    return information.food[d][v] = nf;
+    file_save(&information);
 }
 
 void inf_makeuser (char nostudent [],char password []){

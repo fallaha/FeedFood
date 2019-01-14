@@ -1,6 +1,7 @@
 #include "menu.h"
 #include "display.h"
 #include <stdint.h>
+#include "rsvfood.h"
 
 void show_menu (){
     int c;
@@ -12,14 +13,14 @@ void show_menu (){
     dis_print("5. change password");
     dis_print("6. exit");
 
-    dis_inputi ("",c);
+    dis_inputi ("select > ",c);
 
     switch(c){
         case 1:
-            show_reserved_food();
+            rsv_show_food();
             break;
         case 2:
-            reserve_food();
+            rsv_food();
             break;
         case 3:
             show_detail();
