@@ -1,5 +1,7 @@
 #include "food.h"
 #include <stdint.h>
+#include "information.h"
+
 /* Important note : The Food Number start from 1 (not 0) */
 
 static char food_name_list[FD_MAX_FOOD][FD_MAX_NAME]={

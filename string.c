@@ -1,9 +1,10 @@
 #include "string.h"
+#include <stdint.h>
 
 uint32_t strcopy (char *s,char *d,uint32_t count){
     int i=0;
     for (i=0;i<count;i++)
-        s[i]=d[i];
+        d[i]=s[i];
 }
 
 int str_cmp (char *s,char *d){
@@ -16,3 +17,9 @@ int str_cmp (char *s,char *d){
     else 
         return 0;
 }
+
+void str_add_zero(char*src, char* dst,int pos){
+    strcopy(src,dst,pos-1);
+    dst[pos] = 0;
+}
+

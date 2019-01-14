@@ -2,16 +2,24 @@
 #include "display.h"
 #include <stdint.h>
 #include "rsvfood.h"
+#include <stdlib.h>
+#include "information.h"
+#include "file.h"
+
+void inc_credit() ;
+void change_pass ();
+void show_detail ();
+
 
 void show_menu (){
     int c;
 
-    dis_print("1. This Week reserved food");
-    dis_print("2. reserving food");
-    dis_print("3. Show detail");
-    dis_print("4. Increase credit");
-    dis_print("5. change password");
-    dis_print("6. exit");
+    dis_print("1. This Week reserved food\n");
+    dis_print("2. reserving food\n");
+    dis_print("3. Show detail\n");
+    dis_print("4. Increase credit\n");
+    dis_print("5. change password\n");
+    dis_print("6. exit\n");
 
     dis_inputi ("select > ",c);
 
@@ -32,24 +40,18 @@ void show_menu (){
             change_pass();
             break;
         case 6:
+            inf_save();
             exit(0);
             break;            
     }
 }
 
 void show_detail (){
-    char str [20];
-
-    inf_get_name(str);
-    dis_print("Your Name : ",str);
-
-    inf_get_family(str);
-    dis_print("Your Family : ",str);
-    
-    inf_get_nostudent(str);
-    dis_print("Student Number : ",str);
-
-    dis_print("Credit : %d",inf_get_money());
+    dis_print(" *** Detail ***\n");
+    dis_print("Your Name          :\t %s\n",inf_get_name());
+    dis_print("Your Family        :\t %s\n",inf_get_family());
+    dis_print("StudentNumber      :\t %.10s\n",inf_get_nostudent());
+    dis_print("Credit UserAccount :\t %d (rls)\n",inf_get_money());
 }
 
 void change_pass (){

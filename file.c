@@ -37,7 +37,7 @@ void file_close (){
 
 int file_isexist (char fname []){
     FILE *ip;
-    ip = fopen (fname,'r');
+    ip = fopen (fname,"r");
     if (!ip) /* for better : errno == ENOENT */
         return 0; /* File not exist */
     else 

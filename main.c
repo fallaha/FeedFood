@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include "login.h"
 #include "menu.h"
-
+#include "file.h"
 int main (){
-	printf("Welcome to FeedFood! ");
+	printf("Welcome to FeedFood! \n");
 	user_login();
-	show_menu();
+	while (1)
+		show_menu();
 	return 0;
 }

@@ -1,5 +1,6 @@
 #ifndef _FOOD_H
 #define _FOOD_H
+#include <stdint.h>
 
 #define FD_MAX_FOOD_PER_MEAL 2   /* Maximum of food per meal in list */
 #define FD_MAX_MEAL 3     /* Max meal */

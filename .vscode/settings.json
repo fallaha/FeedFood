@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "display.h": "c",
-        "login.h": "c"
+        "login.h": "c",
+        "string.h": "c",
+        "stdint.h": "c"
     }
 }

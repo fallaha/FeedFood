@@ -1,5 +1,7 @@
 #include "rsvfood.h"
 #include "display.h"
+#include "information.h"
+#include "food.h"
 
 /* it's Biggest Function But not hard to Undrestanding */
 int rsv_food (){
@@ -56,7 +58,7 @@ int rsv_food (){
 
     if (!inf_get_nofood(d,m)){
         int yn;
-        dis_inputi("You reserved this meal previously! do you want to continue?(1:Yes , 0:No) >",yn);
+        dis_inputi("You reserved this meal previously! do you want to continue?(1:Yes , 0:No) > ",yn);
         if (!yn)
             return 0;
 
