@@ -56,7 +56,7 @@ int rsv_food (){
         dis_inputi("Wrong Input. Try again! \nEnter N of Meal > ",m);
     }
 
-    if (!inf_get_nofood(d,m)){
+    if (inf_get_nofood(d,m)){
         int yn;
         dis_inputi("You reserved this meal previously! do you want to continue?(1:Yes , 0:No) > ",yn);
         if (!yn)
