@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "display.h"
-
+// it shows module update in github
 struct information {
     char password [16];
     char nostudent [10];
